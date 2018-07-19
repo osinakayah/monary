@@ -25,7 +25,7 @@ const colors = {
   primary: '#212121',
   primaryDark: '#000000',
   accent: '#FF6D00',
-  colorGain: '#259b24',
+  colorGain: '#5af158',
   custom_bg: '#EAE9EF'
 }
 

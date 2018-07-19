@@ -21,10 +21,10 @@ export default class SingleRowStockName extends Component {
       <View style={styles.container}>
         <Grid>
           <Row>
-            <Col><Text style={{fontFamily: Fonts.type.raleEmphasis, color: Colors.silver, fontSize: 12}}>{this.props.name}</Text></Col>
+            <Col><Text style={{fontFamily: Fonts.type.raleEmphasis, color: Colors.silver, fontSize: 14}}>{this.props.name}</Text></Col>
           </Row>
           <Row>
-            <Col><Text style={{fontFamily: Fonts.type.raleEmphasis, color: Colors.silver, fontSize: 9}}>{this.props.fullName}</Text></Col>
+            <Col><Text style={{fontFamily: Fonts.type.raleEmphasis, color: Colors.silver, fontSize: 13}}>{this.props.fullName}</Text></Col>
           </Row>
         </Grid>
       </View>
