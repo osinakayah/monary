@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import styles from './Styles/SingleRowStockNameStyle'
 import {Grid, Row, Col} from 'native-base'
 import {Colors, Fonts} from "../Themes";
@@ -20,10 +20,10 @@ export default class SingleRowStockName extends Component {
     return (
       <View style={styles.container}>
         <Grid>
-          <Row>
+          <Row onPress={() => {alert(1)}}>
             <Col><Text style={{fontFamily: Fonts.type.raleEmphasis, color: Colors.silver, fontSize: 14}}>{this.props.name}</Text></Col>
           </Row>
-          <Row>
+          <Row onPress={() => {alert(2)}}>
             <Col><Text style={{fontFamily: Fonts.type.raleEmphasis, color: Colors.silver, fontSize: 13}}>{this.props.fullName}</Text></Col>
           </Row>
         </Grid>

@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 // import PropTypes from 'prop-types';
-import { View, Text, ScrollView } from 'react-native'
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import styles from './Styles/WatchListStyle'
 import {Colors, Fonts, Metrics} from "../Themes";
-import {List, ListItem, Left, Body, Right} from 'native-base'
 import SingleRowStockName from './SingleRowStockName'
-import { Table, TableWrapper, Row } from 'react-native-table-component';
+import { Table, Row } from 'react-native-table-component';
 import SingleRowPriceChange from "./SingleRowPriceChange";
 import SinglePricePercentageChange from "./SinglePricePercentageChange";
 
@@ -54,7 +53,7 @@ export default class WatchList extends Component {
           continue
         }
 
-        rowData.push(<Text style={{fontFamily: Fonts.type.raleEmphasis, color: Colors.silver, textAlign: 'center'}}>{i + j}00</Text>);
+        rowData.push(<Text onPress={() => {alert(5)}} style={{fontFamily: Fonts.type.raleEmphasis, color: Colors.silver, textAlign: 'center'}}>{i + j}00</Text>);
       }
       tableData.push(rowData);
     }
@@ -71,6 +70,7 @@ export default class WatchList extends Component {
                 {
                   tableData.map((rowData, index) => (
                     <Row
+
                       key={index}
                       data={rowData}
                       widthArr={state.widthArr}

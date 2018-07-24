@@ -18,7 +18,7 @@ export default class SinglePricePercentageChange extends Component {
 
   render () {
     return (
-      <Text style={{color: Colors.colorGain, fontFamily: Fonts.type.raleEmphasis, fontSize: 14, textAlign: 'center'}}>{this.props.percentageChange}</Text>
+      <Text onPress={() => {alert(4)}} style={{color: Colors.colorGain, fontFamily: Fonts.type.raleEmphasis, fontSize: 14, textAlign: 'center'}}>{this.props.percentageChange}</Text>
     )
   }
 }

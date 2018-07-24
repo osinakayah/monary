@@ -18,7 +18,7 @@ export default class SingleRowPriceChange extends Component {
 
   render () {
     return (
-      <Button success small style={{paddingRight: 12, paddingLeft: 12}}>
+      <Button onPress={() => {alert(3)}} success small style={{paddingRight: 12, paddingLeft: 12}}>
         {/*<Icon style={{fontSize: 12}} type='MaterialCommunityIcons' name='currency-ngn' />*/}
         <Text style={{fontFamily: Fonts.type.raleEmphasis, color: Colors.silver, fontSize: 14}}>{this.props.priceChange}00</Text>
       </Button>

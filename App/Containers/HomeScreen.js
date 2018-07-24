@@ -52,7 +52,7 @@ class HomeScreen extends Component {
         <Header style={{backgroundColor: Colors.primary}} androidStatusBarColor={ Colors.primaryDark}>
           <Body><Title style={{fontFamily: Fonts.type.raleEmphasis, color: Colors.silver}}>Monary</Title></Body>
           <Right>
-            <Button transparent>
+            <Button transparent onPress={() => this.props.navigation.navigate('StockDetailScreen')}>
               <Icon style={{color: Colors.silver}} name="md-search" />
             </Button>
           </Right>
