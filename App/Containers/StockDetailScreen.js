@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { View, Text } from 'react-native'
 import { connect } from 'react-redux'
 import { Container, Content, Header, Grid, Row, Col, Button, Body, Left, Right, Icon, Title, Subtitle } from 'native-base'
+import { Card, CardItem } from 'native-base'
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 
@@ -17,6 +18,64 @@ class StockDetailScreen extends Component {
         "x": 0,
         "y": 47782
       }, {
+        "x": 1,
+        "y": 48497
+      }, {
+        "x": 2,
+        "y": 77128
+      }, {
+        "x": 3,
+        "y": 73413
+      }, {
+        "x": 4,
+        "y": 58257
+      }, {
+        "x": 5,
+        "y": 40579
+      }, {
+        "x": 6,
+        "y": 72893
+      }, {
+        "x": 7,
+        "y": 60663
+      }, {
+        "x": 8,
+        "y": 15715
+      }, {
+        "x": 9,
+        "y": 40305
+      }, {
+        "x": 10,
+        "y": 68592
+      }, {
+        "x": 11,
+        "y": 95664
+      }, {
+        "x": 12,
+        "y": 17908
+      }, {
+        "x": 13,
+        "y": 22838
+      }, {
+        "x": 14,
+        "y": 32153
+      }, {
+        "x": 15,
+        "y": 56594
+      }, {
+        "x": 16,
+        "y": 76348
+      }, {
+        "x": 17,
+        "y": 46222
+      }, {
+        "x": 18,
+        "y": 59304
+      },
+        {
+          "x": 0,
+          "y": 47782
+        }, {
         "x": 1,
         "y": 48497
       }, {
@@ -289,6 +348,21 @@ class StockDetailScreen extends Component {
                 <Col><Button small style={{backgroundColor: Colors.accent, margin: Metrics.smallMargin}} block transparent><Text style={{fontSize: 15, color: Colors.silver, fontFamily: Fonts.type.raleRegular}}>Sell</Text></Button></Col>
               </Row>
             </Grid>
+
+            <Card>
+              <CardItem style={{backgroundColor: Colors.coal}} header>
+                <Text style={{color: Colors.silver}}>News</Text>
+              </CardItem>
+              <CardItem style={{backgroundColor: Colors.coal}}>
+                <Text style={{color: Colors.silver}}>Alphabet planning to expand to Africa and build more data center</Text>
+              </CardItem>
+              <CardItem style={{backgroundColor: Colors.coal}}>
+                <Text style={{color: Colors.silver}}>Alphabet planning to expand to Africa and build more data center</Text>
+              </CardItem>
+              <CardItem style={{backgroundColor: Colors.coal}}>
+                <Text style={{color: Colors.silver}}>Alphabet planning to expand to Africa and build more data center</Text>
+              </CardItem>
+            </Card>
           </View>
 
         </Content>
