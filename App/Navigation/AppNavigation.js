@@ -1,4 +1,5 @@
 import { StackNavigator } from 'react-navigation'
+import BuyStockScreen from '../Containers/BuyStockScreen'
 import StockDetailScreen from '../Containers/StockDetailScreen'
 import HomeScreen from '../Containers/HomeScreen'
 import RegisterScreen from '../Containers/RegisterScreen'
@@ -9,6 +10,7 @@ import styles from './Styles/NavigationStyles'
 
 // Manifest of possible screens
 const PrimaryNav = StackNavigator({
+  BuyStockScreen: { screen: BuyStockScreen },
   StockDetailScreen: { screen: StockDetailScreen },
   HomeScreen: { screen: HomeScreen },
   RegisterScreen: { screen: RegisterScreen },
@@ -17,7 +19,7 @@ const PrimaryNav = StackNavigator({
 }, {
   // Default config for all screens
   headerMode: 'none',
-  initialRouteName: 'StockDetailScreen',
+  initialRouteName: 'BuyStockScreen',
   navigationOptions: {
     headerStyle: styles.header
   }

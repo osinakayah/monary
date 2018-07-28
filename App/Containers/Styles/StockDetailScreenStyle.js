@@ -18,7 +18,7 @@ export default StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: 0,
-    backgroundColor: Colors.primaryDark
+    backgroundColor: Colors.primary
   },
   gridStyle: {
     //marginTop: 300,

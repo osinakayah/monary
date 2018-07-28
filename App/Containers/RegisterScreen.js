@@ -86,7 +86,7 @@ class RegisterScreen extends Component {
 
               <Row style={{marginTop: Metrics.section}}>
                 <Col>
-                  <Button bordered light block rounded  ><Text>Go</Text></Button>
+                  <Button bordered light block rounded onPress={() => {this.props.navigation.navigate('HomeScreen')}} ><Text>Go</Text></Button>
                   <Button onPress={() => {this.props.navigation.navigate('LoginScreen')}} transparent block><Text style={{fontFamily: Fonts.type.base, color: Colors.silver}} uppercase={false} >Already Have an Account ?</Text></Button>
 
                 </Col>

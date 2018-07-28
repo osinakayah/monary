@@ -2,14 +2,15 @@ import React, { Component } from 'react'
 import { View, Text } from 'react-native'
 import { connect } from 'react-redux'
 import { Container, Content, Header, Grid, Row, Col, Button, Body, Left, Right, Icon, Title, Subtitle } from 'native-base'
-import { Card, CardItem } from 'native-base'
+import { Card, CardItem, FooterTab, Footer } from 'native-base'
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
-
 // Styles
 import styles from './Styles/StockDetailScreenStyle'
 import {Colors, Fonts, Metrics} from "../Themes";
 import {StockLine} from 'react-native-pathjs-charts'
+
+import moment from 'moment';
 class StockDetailScreen extends Component {
   render () {
     const {goBack} = this.props.navigation;
@@ -247,19 +248,19 @@ class StockDetailScreen extends Component {
         "y": 153227
       }]
     ]
-    let options = {
-      width: 250,
-      height: 250,
-      color: '#2980B9',
+    const options = {
+      width: 300,
+      height: 300,
+      color: Colors.charcoal,
       margin: {
-        top: 10,
-        left: 35,
+        top: 12,
+        left: 37,
         bottom: 30,
-        right: 10
+        right: 12
       },
       animate: {
         type: 'delayed',
-        duration: 200
+        duration: 2000
       },
       axisX: {
         showAxis: true,
@@ -273,7 +274,7 @@ class StockDetailScreen extends Component {
           fontFamily: 'Arial',
           fontSize: 8,
           fontWeight: true,
-          fill: '#34495E'
+          fill: Colors.silver
         }
       },
       axisY: {
@@ -288,13 +289,13 @@ class StockDetailScreen extends Component {
           fontFamily: 'Arial',
           fontSize: 8,
           fontWeight: true,
-          fill: '#34495E'
+          fill: Colors.silver
         }
       }
-    }
+    };
     return (
-      <Container style={{backgroundColor: Colors.coal}}>
-        <Header style={{backgroundColor: Colors.primaryDark}} androidStatusBarColor={ Colors.primaryDark}>
+      <Container style={{backgroundColor: Colors.coal, flex: 1}}>
+        <Header style={{backgroundColor: Colors.primary}} androidStatusBarColor={ Colors.primaryDark}>
           <Left>
             <Button onPress={() => {goBack()}} transparent>
               <Icon style={{color: Colors.silver}} name='arrow-back' />
@@ -311,8 +312,10 @@ class StockDetailScreen extends Component {
           </Right>
         </Header>
         <Content style={{position: 'relative', height: Metrics.screenHeight}}>
+
           <View style={styles.bannerStyle}>
-            <View style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center', width: Metrics.screenWidth, height: Metrics.screenHeight/8, backgroundColor: Colors.primaryDark}}>
+
+            <View style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center', width: Metrics.screenWidth, height: Metrics.screenHeight/12, backgroundColor: Colors.primary}}>
               <View style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', alignItems: 'center'}}>
                 <Icon style={{fontSize: 25, color: Colors.silver}} type='MaterialCommunityIcons' name='currency-ngn' />
                 <Text style={{fontSize: 30, color: Colors.silver, fontFamily: Fonts.type.raleRegular}}>12,000</Text>
@@ -324,8 +327,10 @@ class StockDetailScreen extends Component {
             </View>
           </View>
 
-          <View style={[styles.gridStyle, styles.cardContainer]}>
+          <View style={[styles.gridStyle, styles.cardContainer, {display: 'flex', justifyContent: 'center', flexDirection: 'row', alignItems: 'center'}]}>
             <StockLine data={data} options={options} xKey='x' yKey='y' />
+          </View>
+          <View style={{margin: Metrics.doubleBaseMargin}}>
             <Grid>
               <Row>
                 <Col><Button small style={{backgroundColor: Colors.accent}} block transparent><Text style={{fontSize: 15, color: Colors.silver, fontFamily: Fonts.type.raleRegular}}>1 D</Text></Button></Col>
@@ -340,32 +345,42 @@ class StockDetailScreen extends Component {
             </Grid>
           </View>
 
-          <View style={{margin: Metrics.smallMargin}}>
-            <Grid>
-              <Row>
-                <Col><Button small style={{backgroundColor: Colors.colorGain, margin: Metrics.smallMargin}} block transparent><Text style={{fontSize: 15, color: Colors.silver, fontFamily: Fonts.type.raleRegular}}>Buy</Text></Button></Col>
-                <Col><Button small style={{backgroundColor: Colors.panther, margin: Metrics.smallMargin}} block transparent><Text style={{fontSize: 15, color: Colors.silver, fontFamily: Fonts.type.raleRegular}}>Watch</Text></Button></Col>
-                <Col><Button small style={{backgroundColor: Colors.accent, margin: Metrics.smallMargin}} block transparent><Text style={{fontSize: 15, color: Colors.silver, fontFamily: Fonts.type.raleRegular}}>Sell</Text></Button></Col>
-              </Row>
-            </Grid>
+          <View>
 
             <Card>
-              <CardItem style={{backgroundColor: Colors.coal}} header>
+              <CardItem style={{backgroundColor: Colors.charcoal}} header>
                 <Text style={{color: Colors.silver}}>News</Text>
               </CardItem>
-              <CardItem style={{backgroundColor: Colors.coal}}>
-                <Text style={{color: Colors.silver}}>Alphabet planning to expand to Africa and build more data center</Text>
+              <CardItem style={{backgroundColor: Colors.charcoal}}>
+                <Text style={{color: Colors.silver}}>Alphabet planning to expand to Africa and build more data centerAlphabet planning to expand to Africa and build more data center</Text>
               </CardItem>
-              <CardItem style={{backgroundColor: Colors.coal}}>
-                <Text style={{color: Colors.silver}}>Alphabet planning to expand to Africa and build more data center</Text>
+              <CardItem style={{backgroundColor: Colors.charcoal}}>
+                <Text style={{color: Colors.silver}}>Alphabet planning to expand to Africa and build more data centerAlphabet planning to expand to Africa and build more data center</Text>
               </CardItem>
-              <CardItem style={{backgroundColor: Colors.coal}}>
-                <Text style={{color: Colors.silver}}>Alphabet planning to expand to Africa and build more data center</Text>
+              <CardItem style={{backgroundColor: Colors.charcoal}}>
+                <Text style={{color: Colors.silver}}>Alphabet planning to expand to Africa and build more data centerAlphabet planning to expand to Africa and build more data center</Text>
               </CardItem>
             </Card>
           </View>
 
+
         </Content>
+        <Footer>
+          <FooterTab style={{backgroundColor: Colors.silver}}>
+            <Button style={{backgroundColor: Colors.silver}} vertical onPress={() => { this.props.navigation.navigate('BuyStockScreen')}} >
+              <Icon name="md-briefcase" style={{color: Colors.primary}}/>
+              <Text style={{color: Colors.primary}}>Buy</Text>
+            </Button>
+            <Button style={{backgroundColor: Colors.silver, marginRight: 7, marginLeft: 7}} vertical >
+              <Icon name="md-eye" style={{color: Colors.primary}}/>
+              <Text style={{color: Colors.primary}}>Watch</Text>
+            </Button>
+            <Button style={{backgroundColor: Colors.silver}} vertical >
+              <Icon type='FontAwesome' name="handshake-o" style={{color: Colors.primary}}/>
+              <Text style={{color: Colors.primary}}>Sell</Text>
+            </Button>
+          </FooterTab>
+        </Footer>
       </Container>
     )
   }

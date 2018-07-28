@@ -23,8 +23,8 @@ const colors = {
   banner: '#5F3E63',
   text: '#E0D7E5',
   primary: '#212121',
-  primaryDark: '#000000',
-  accent: '#FF6D00',
+  primaryDark: '#161616',
+  accent: '#7bc2ff',
   colorGain: '#5af158',
   custom_bg: '#EAE9EF'
 }
