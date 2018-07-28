@@ -25,8 +25,10 @@ const colors = {
   primary: '#212121',
   primaryDark: '#161616',
   accent: '#7bc2ff',
-  colorGain: '#5af158',
-  custom_bg: '#EAE9EF'
+  colorGain: '#259b24',
+  custom_bg: '#EAE9EF',
+  lightGain: '#689f38',
+  lightLoss: '#ff6e40'
 }
 
 export default colors

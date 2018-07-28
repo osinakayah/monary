@@ -4,7 +4,7 @@ import { ApplicationStyles,Colors, Metrics } from '../../Themes/'
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
   cardContainer : {
-    elevation   : 3,
+    //elevation   : 3,
     flex        : 1,
     margin      : 12,
     padding     : 12,
@@ -26,7 +26,14 @@ export default StyleSheet.create({
     // top: (Metrics.screenHeight / 4) / 2,
     top: 0,
     left: 'auto',
-    marginTop: (Metrics.screenHeight / 4) / 2,
-    zIndex: 10
+    marginTop: (Metrics.screenHeight / 12),
+    zIndex: 0
+  },
+  modal: {
+  },
+
+  modal2: {
+    height: Metrics.screenHeight/2,
+    backgroundColor: Colors.silver
   },
 })

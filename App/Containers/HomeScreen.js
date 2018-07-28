@@ -65,26 +65,26 @@ class HomeScreen extends Component {
           <FooterTab style={{backgroundColor: Colors.primary}}>
             <Button style={this.state.selectedTab === WATCHLIST ? {backgroundColor: Colors.custom_bg}: {}} vertical onPress={() => {this.setState({selectedTab: WATCHLIST })}}>
               <Icon name="md-eye" style={this.state.selectedTab === WATCHLIST ? {color: Colors.primary}: {color: Colors.silver}} />
-              <Text uppercase={false} style={this.state.selectedTab === WATCHLIST ? {fontSize: 10, color: Colors.primary} : {fontSize: 10, color: Colors.silver}}>WatchList</Text>
+              <Text uppercase={false} style={this.state.selectedTab === WATCHLIST ? {fontSize: 11, color: Colors.primary} : {fontSize: 11, color: Colors.silver}}>WatchList</Text>
             </Button>
 
             <Button style={this.state.selectedTab === PORTFOLIO ? {backgroundColor: Colors.custom_bg}: {}} vertical onPress={() => {this.setState({selectedTab: PORTFOLIO })}}>
               <Icon name="md-briefcase" style={this.state.selectedTab === PORTFOLIO ? {color: Colors.primary}: {color: Colors.silver}} />
-              <Text uppercase={false} style={this.state.selectedTab === PORTFOLIO ? {fontSize: 10, color: Colors.primary} : {fontSize: 10, color: Colors.silver}}>Portfolio</Text>
+              <Text uppercase={false} style={this.state.selectedTab === PORTFOLIO ? {fontSize: 11, color: Colors.primary} : {fontSize: 11, color: Colors.silver}}>Portfolio</Text>
             </Button>
 
             <Button style={this.state.selectedTab === MARKETS ? {backgroundColor: Colors.custom_bg}: {}} vertical onPress={() => {this.setState({selectedTab: MARKETS })}}>
               <Icon active name="md-analytics" style={this.state.selectedTab === MARKETS ? {color: Colors.primary}: {color: Colors.silver}} />
-              <Text uppercase={false} style={this.state.selectedTab === MARKETS ? {fontSize: 10, color: Colors.primary} : {fontSize: 10, color: Colors.silver}}>Market</Text>
+              <Text uppercase={false} style={this.state.selectedTab === MARKETS ? {fontSize: 11, color: Colors.primary} : {fontSize: 11, color: Colors.silver}}>Market</Text>
             </Button>
             <Button style={this.state.selectedTab === TRANSACTIONS ? {backgroundColor: Colors.custom_bg}: {}} vertical onPress={() => {this.setState({selectedTab: TRANSACTIONS })}}>
               <Icon name="md-list" style={this.state.selectedTab === TRANSACTIONS ? {color: Colors.primary}: {color: Colors.silver}} />
-              <Text uppercase={false} style={this.state.selectedTab === TRANSACTIONS ? {fontSize: 10, color: Colors.primary} : {fontSize: 10, color: Colors.silver}}>Transactions</Text>
+              <Text uppercase={false} style={this.state.selectedTab === TRANSACTIONS ? {fontSize: 11, color: Colors.primary} : {fontSize: 11, color: Colors.silver}}>Transactions</Text>
             </Button>
 
             <Button style={this.state.selectedTab === ACCOUNT ? {backgroundColor: Colors.custom_bg}: {}} vertical onPress={() => {this.setState({selectedTab: ACCOUNT })}}>
               <Icon name="md-person" style={this.state.selectedTab === ACCOUNT ? {color: Colors.primary}: {color: Colors.silver}} />
-              <Text uppercase={false} style={this.state.selectedTab === ACCOUNT ? {fontSize: 10, color: Colors.primary} : {fontSize: 10, color: Colors.silver}}>Account</Text>
+              <Text uppercase={false} style={this.state.selectedTab === ACCOUNT ? {fontSize: 11, color: Colors.primary} : {fontSize: 11, color: Colors.silver}}>Account</Text>
             </Button>
 
           </FooterTab>

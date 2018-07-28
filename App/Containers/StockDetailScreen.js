@@ -2,15 +2,17 @@ import React, { Component } from 'react'
 import { View, Text } from 'react-native'
 import { connect } from 'react-redux'
 import { Container, Content, Header, Grid, Row, Col, Button, Body, Left, Right, Icon, Title, Subtitle } from 'native-base'
-import { Card, CardItem, FooterTab, Footer } from 'native-base'
+import { ListItem, List, FooterTab, Footer } from 'native-base'
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 // Styles
 import styles from './Styles/StockDetailScreenStyle'
 import {Colors, Fonts, Metrics} from "../Themes";
 import {StockLine} from 'react-native-pathjs-charts'
-
+import Modal from 'react-native-modalbox';
 import moment from 'moment';
+import BuyStock from "../Components/BuyStock";
+import SellStock from "../Components/SellStock";
 class StockDetailScreen extends Component {
   render () {
     const {goBack} = this.props.navigation;
@@ -311,25 +313,30 @@ class StockDetailScreen extends Component {
             </Button>
           </Right>
         </Header>
-        <Content style={{position: 'relative', height: Metrics.screenHeight}}>
+        <Content>
 
-          <View style={styles.bannerStyle}>
-
-            <View style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center', width: Metrics.screenWidth, height: Metrics.screenHeight/12, backgroundColor: Colors.primary}}>
-              <View style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', alignItems: 'center'}}>
-                <Icon style={{fontSize: 25, color: Colors.silver}} type='MaterialCommunityIcons' name='currency-ngn' />
-                <Text style={{fontSize: 30, color: Colors.silver, fontFamily: Fonts.type.raleRegular}}>12,000</Text>
-              </View>
-              <View style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', alignItems: 'center'}}>
-                <Text style={{fontSize: 15, color: Colors.colorGain, fontFamily: Fonts.type.raleRegular, marginRight: 3}}>120.09</Text>
-                <Text style={{fontSize: 15, color: Colors.colorGain, fontFamily: Fonts.type.raleRegular}}>(20%)</Text>
-              </View>
+          <View style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center', width: Metrics.screenWidth, height: Metrics.screenHeight/7, backgroundColor: Colors.primary}}>
+            <View style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', alignItems: 'center'}}>
+              <Icon style={{fontSize: 25, color: Colors.silver}} type='MaterialCommunityIcons' name='currency-ngn' />
+              <Text style={{fontSize: 30, color: Colors.silver, fontFamily: Fonts.type.raleRegular}}>12,000</Text>
+            </View>
+            <View style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', alignItems: 'center'}}>
+              <Text style={{fontSize: 15, color: Colors.colorGain, fontFamily: Fonts.type.raleRegular, marginRight: 3}}>120.09</Text>
+              <Text style={{fontSize: 15, color: Colors.colorGain, fontFamily: Fonts.type.raleRegular}}>(20%)</Text>
             </View>
           </View>
 
-          <View style={[styles.gridStyle, styles.cardContainer, {display: 'flex', justifyContent: 'center', flexDirection: 'row', alignItems: 'center'}]}>
+          <View style={[styles.cardContainer, {display: 'flex', justifyContent: 'center', flexDirection: 'row', alignItems: 'center'}]}>
             <StockLine data={data} options={options} xKey='x' yKey='y' />
           </View>
+          <Modal style={[styles.modal, styles.modal2]} position={"top"} ref={"buyStock"}>
+              <BuyStock/>
+          </Modal>
+
+          <Modal style={[styles.modal, styles.modal2]} position={"top"} ref={"sellStock"}>
+            <SellStock/>
+          </Modal>
+
           <View style={{margin: Metrics.doubleBaseMargin}}>
             <Grid>
               <Row>
@@ -345,41 +352,68 @@ class StockDetailScreen extends Component {
             </Grid>
           </View>
 
-          <View>
-
-            <Card>
-              <CardItem style={{backgroundColor: Colors.charcoal}} header>
+          <View style={{backgroundColor: Colors.charcoal}}>
+            <List>
+              <ListItem style={{backgroundColor: Colors.charcoal}} header>
                 <Text style={{color: Colors.silver}}>News</Text>
-              </CardItem>
-              <CardItem style={{backgroundColor: Colors.charcoal}}>
+              </ListItem>
+              <ListItem style={{backgroundColor: Colors.charcoal}}>
                 <Text style={{color: Colors.silver}}>Alphabet planning to expand to Africa and build more data centerAlphabet planning to expand to Africa and build more data center</Text>
-              </CardItem>
-              <CardItem style={{backgroundColor: Colors.charcoal}}>
+              </ListItem>
+              <ListItem style={{backgroundColor: Colors.charcoal}}>
                 <Text style={{color: Colors.silver}}>Alphabet planning to expand to Africa and build more data centerAlphabet planning to expand to Africa and build more data center</Text>
-              </CardItem>
-              <CardItem style={{backgroundColor: Colors.charcoal}}>
+              </ListItem>
+              <ListItem style={{backgroundColor: Colors.charcoal}}>
                 <Text style={{color: Colors.silver}}>Alphabet planning to expand to Africa and build more data centerAlphabet planning to expand to Africa and build more data center</Text>
-              </CardItem>
-            </Card>
+              </ListItem>
+            </List>
           </View>
 
 
         </Content>
-        <Footer>
-          <FooterTab style={{backgroundColor: Colors.silver}}>
-            <Button style={{backgroundColor: Colors.silver}} vertical onPress={() => { this.props.navigation.navigate('BuyStockScreen')}} >
-              <Icon name="md-briefcase" style={{color: Colors.primary}}/>
-              <Text style={{color: Colors.primary}}>Buy</Text>
-            </Button>
-            <Button style={{backgroundColor: Colors.silver, marginRight: 7, marginLeft: 7}} vertical >
-              <Icon name="md-eye" style={{color: Colors.primary}}/>
-              <Text style={{color: Colors.primary}}>Watch</Text>
-            </Button>
-            <Button style={{backgroundColor: Colors.silver}} vertical >
-              <Icon type='FontAwesome' name="handshake-o" style={{color: Colors.primary}}/>
-              <Text style={{color: Colors.primary}}>Sell</Text>
-            </Button>
+        <Footer style={{backgroundColor: Colors.charcoal}}>
+          <FooterTab style={{backgroundColor: Colors.charcoal}}>
+            <Grid>
+              <Row>
+                <Col>
+                  <Button block style={{backgroundColor: Colors.colorGain}} vertical onPress={() => {this.refs.buyStock.open()}} >
+                    <Icon name="md-briefcase" style={{color: Colors.silver}}/>
+                    <Text style={{color: Colors.silver}}>Buy</Text>
+                  </Button>
+                </Col>
+                <Col>
+                  <Button block style={{backgroundColor: Colors.accent, marginRight: 7, marginLeft: 7}} vertical >
+                    <Icon name="md-eye" style={{color: Colors.silver}}/>
+                    <Text style={{color: Colors.silver}}>Watch</Text>
+                  </Button>
+                </Col>
+                <Col>
+                  <Button block style={{backgroundColor: Colors.bloodOrange}} vertical onPress={() => {this.refs.sellStock.open()}} >
+                    <Icon type='FontAwesome' name="handshake-o" style={{color: Colors.silver}}/>
+                    <Text style={{color: Colors.silver}}>Sell</Text>
+                  </Button>
+                </Col>
+              </Row>
+            </Grid>
           </FooterTab>
+          {/*<FooterTab style={{backgroundColor: Colors.silver}}>*/}
+            {/*<Button style={{backgroundColor: Colors.silver}} vertical onPress={() => {this.refs.buyStock.open()}} >*/}
+              {/*<Icon name="md-briefcase" style={{color: Colors.primary}}/>*/}
+              {/*<Text style={{color: Colors.primary}}>Buy</Text>*/}
+            {/*</Button>*/}
+          {/*</FooterTab>*/}
+          {/*<FooterTab>*/}
+            {/*<Button style={{backgroundColor: Colors.silver, marginRight: 7, marginLeft: 7}} vertical >*/}
+              {/*<Icon name="md-eye" style={{color: Colors.primary}}/>*/}
+              {/*<Text style={{color: Colors.primary}}>Watch</Text>*/}
+            {/*</Button>*/}
+          {/*</FooterTab>*/}
+          {/*<FooterTab>*/}
+            {/*<Button style={{backgroundColor: Colors.silver}} vertical >*/}
+              {/*<Icon type='FontAwesome' name="handshake-o" style={{color: Colors.primary}}/>*/}
+              {/*<Text style={{color: Colors.primary}}>Sell</Text>*/}
+            {/*</Button>*/}
+          {/*</FooterTab>*/}
         </Footer>
       </Container>
     )
