@@ -33,7 +33,7 @@ export default StyleSheet.create({
   },
 
   modal2: {
-    height: Metrics.screenHeight/2,
+    height: Metrics.screenHeight,
     backgroundColor: Colors.silver
   },
 })

@@ -41,7 +41,7 @@ export default class SellStock extends Component {
           </Item>
           <Item fixedLabel>
             <Label style={{color: Colors.primary}}>Stock Price</Label>
-            <Icon type='MaterialCommunityIcons' name='currency-ngn' />
+            <Icon type='MaterialCommunityIcons' name='currency-ngn' style={{fontSize: 15}} />
             <Input editable={false} style={{color: Colors.primary}} value='129'/>
           </Item>
 
@@ -52,13 +52,13 @@ export default class SellStock extends Component {
 
           <Item fixedLabel >
             <Label style={{color: Colors.primary}}>Limit</Label>
-            <Icon type='MaterialCommunityIcons' name='currency-ngn' />
+            <Icon type='MaterialCommunityIcons' name='currency-ngn' style={{fontSize: 15}} />
             <Input style={{color: Colors.primary}} placeholder='Price Limit'/>
           </Item>
 
           <Item fixedLabel>
             <Label style={{color: Colors.primary}}>Available Funds</Label>
-            <Icon type='MaterialCommunityIcons' name='currency-ngn' />
+            <Icon type='MaterialCommunityIcons' name='currency-ngn' style={{fontSize: 15}} />
             <Input editable={false} style={{color: Colors.primary}} value='129,000'/>
           </Item>
 
@@ -69,7 +69,7 @@ export default class SellStock extends Component {
 
           <Item fixedLabel>
             <Label style={{color: Colors.primary}}>Estimate</Label>
-            <Icon type='MaterialCommunityIcons' name='currency-ngn' />
+            <Icon type='MaterialCommunityIcons' name='currency-ngn' style={{fontSize: 15}} />
             <Input editable={false} style={{color: Colors.primary}} value='129'/>
           </Item>
 

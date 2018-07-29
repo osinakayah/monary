@@ -24,7 +24,7 @@ export default class TransactionItem extends Component {
   render () {
     return (
       <View style={[styles.container, this.props.isGain ? {backgroundColor: Colors.coal} : {backgroundColor: Colors.charcoal}]}>
-        <Grid onPress={() => alert(3)}>
+        <Grid>
           <Row>
             <Col size={12}>
               <Row>

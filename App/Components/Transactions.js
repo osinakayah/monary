@@ -5,6 +5,7 @@ import styles from './Styles/TransactionsStyle'
 import {Colors} from "../Themes";
 import { Grid, Row, Col, Button, CardItem, Card } from 'native-base';
 import TransactionItem from "./TransactionItem";
+import TransactionItemHeader from "./TransactionItemHeader";
 
 const PENDING = 0
 const EXECUTED = 1
@@ -41,6 +42,8 @@ export default class Transactions extends Component {
         </Grid>
 
         <View>
+          <TransactionItemHeader/>
+
           <TransactionItem isBuy date='12-3-18' equityName='Alphabet Inc' isGain numberOfShares={7} price={30} ticker= 'ALP' />
           <TransactionItem isBuy={false} date='12-3-18' equityName='Alphabet Inc' isGain={false} numberOfShares={7} price={30} ticker= 'ALP' />
           <TransactionItem isBuy date='12-3-18' equityName='Alphabet Inc' isGain numberOfShares={7} price={30} ticker= 'ALP' />

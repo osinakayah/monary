@@ -15,11 +15,11 @@ const PrimaryNav = StackNavigator({
   HomeScreen: { screen: HomeScreen },
   RegisterScreen: { screen: RegisterScreen },
   LoginScreen: { screen: LoginScreen },
-  LaunchScreen: { screen: LaunchScreen }
+  //LaunchScreen: { screen: LaunchScreen }
 }, {
   // Default config for all screens
   headerMode: 'none',
-  initialRouteName: 'HomeScreen',
+  initialRouteName: 'LoginScreen',
   navigationOptions: {
     headerStyle: styles.header
   }

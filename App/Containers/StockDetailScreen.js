@@ -321,8 +321,9 @@ class StockDetailScreen extends Component {
               <Text style={{fontSize: 30, color: Colors.silver, fontFamily: Fonts.type.raleRegular}}>12,000</Text>
             </View>
             <View style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', alignItems: 'center'}}>
-              <Text style={{fontSize: 15, color: Colors.colorGain, fontFamily: Fonts.type.raleRegular, marginRight: 3}}>120.09</Text>
-              <Text style={{fontSize: 15, color: Colors.colorGain, fontFamily: Fonts.type.raleRegular}}>(20%)</Text>
+              <Text style={{fontSize: 15, color: Colors.colorGain, fontFamily: Fonts.type.raleRegular, marginRight: 3}}>Price: 120.09, </Text>
+              <Text style={{fontSize: 15, color: Colors.colorGain, fontFamily: Fonts.type.raleRegular, marginRight: 3}}> Vol: 120, </Text>
+              <Text style={{fontSize: 15, color: Colors.colorGain, fontFamily: Fonts.type.raleRegular}}>N Change: (20%)</Text>
             </View>
           </View>
 
@@ -352,18 +353,18 @@ class StockDetailScreen extends Component {
             </Grid>
           </View>
 
-          <View style={{backgroundColor: Colors.charcoal}}>
+          <View style={{backgroundColor: Colors.coal}}>
             <List>
-              <ListItem style={{backgroundColor: Colors.charcoal}} header>
+              <ListItem style={{backgroundColor: Colors.coal}} header>
                 <Text style={{color: Colors.silver}}>News</Text>
               </ListItem>
-              <ListItem style={{backgroundColor: Colors.charcoal}}>
+              <ListItem style={{backgroundColor: Colors.coal}}>
                 <Text style={{color: Colors.silver}}>Alphabet planning to expand to Africa and build more data centerAlphabet planning to expand to Africa and build more data center</Text>
               </ListItem>
-              <ListItem style={{backgroundColor: Colors.charcoal}}>
+              <ListItem style={{backgroundColor: Colors.coal}}>
                 <Text style={{color: Colors.silver}}>Alphabet planning to expand to Africa and build more data centerAlphabet planning to expand to Africa and build more data center</Text>
               </ListItem>
-              <ListItem style={{backgroundColor: Colors.charcoal}}>
+              <ListItem style={{backgroundColor: Colors.coal}}>
                 <Text style={{color: Colors.silver}}>Alphabet planning to expand to Africa and build more data centerAlphabet planning to expand to Africa and build more data center</Text>
               </ListItem>
             </List>
@@ -371,8 +372,8 @@ class StockDetailScreen extends Component {
 
 
         </Content>
-        <Footer style={{backgroundColor: Colors.charcoal}}>
-          <FooterTab style={{backgroundColor: Colors.charcoal}}>
+        <Footer>
+          <FooterTab style={{backgroundColor: Colors.coal}}>
             <Grid>
               <Row>
                 <Col>
@@ -396,24 +397,6 @@ class StockDetailScreen extends Component {
               </Row>
             </Grid>
           </FooterTab>
-          {/*<FooterTab style={{backgroundColor: Colors.silver}}>*/}
-            {/*<Button style={{backgroundColor: Colors.silver}} vertical onPress={() => {this.refs.buyStock.open()}} >*/}
-              {/*<Icon name="md-briefcase" style={{color: Colors.primary}}/>*/}
-              {/*<Text style={{color: Colors.primary}}>Buy</Text>*/}
-            {/*</Button>*/}
-          {/*</FooterTab>*/}
-          {/*<FooterTab>*/}
-            {/*<Button style={{backgroundColor: Colors.silver, marginRight: 7, marginLeft: 7}} vertical >*/}
-              {/*<Icon name="md-eye" style={{color: Colors.primary}}/>*/}
-              {/*<Text style={{color: Colors.primary}}>Watch</Text>*/}
-            {/*</Button>*/}
-          {/*</FooterTab>*/}
-          {/*<FooterTab>*/}
-            {/*<Button style={{backgroundColor: Colors.silver}} vertical >*/}
-              {/*<Icon type='FontAwesome' name="handshake-o" style={{color: Colors.primary}}/>*/}
-              {/*<Text style={{color: Colors.primary}}>Sell</Text>*/}
-            {/*</Button>*/}
-          {/*</FooterTab>*/}
         </Footer>
       </Container>
     )

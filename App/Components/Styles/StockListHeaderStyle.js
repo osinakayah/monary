@@ -3,7 +3,7 @@ import { Colors } from '../../Themes'
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.primaryDark,
+    backgroundColor: Colors.primary,
     padding: 3
   }
 })
